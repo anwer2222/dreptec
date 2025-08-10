@@ -1,3 +1,5 @@
+"use client"
+
 // import Button from "@/components/Button"
 import { Button } from "@/components/ui/button"
 import {
@@ -7,7 +9,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -19,46 +20,66 @@ import * as React from "react"
 
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
+import { sendEmail } from "./Mail"
+import { useValue } from "./ValueContext"
+import { getPriceInfo } from "./AiTools"
 
 // {open}: {open: boolean} open={open}
-const Form = () => {
+const Form = ( {
+    plan,
+    isOpen,
+    setIsOpen,
+  }: {
+    
+    plan?: string;
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  }) => {
+  const { value } = useValue();
   const [formValues, setFormValues] = React.useState({
     name: '',
     phone: '',
     email: '',
-    text: ''
+    message: '',
+    chat:value
   });
 
-  const isFormIncomplete = Object.values(formValues).some(value => value.trim() === '');
+  const isFormIncomplete = Object.values(formValues).some(value => value.toString().trim() === '');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormValues(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!isFormIncomplete) {
-      // Proceed with form submission
+
+  const handleSubmit = async (formData: FormData) => {
+    
+    const result = await sendEmail(formData);
+    if (result.success) {
+      alert(result.message);
+    } else {
+      alert(result.message);
     }
   };
+   const getPlan=()=>
+   {
+    if (plan) {return plan} else { 
+        if (value) {return "Business"} else {return "Starter"}
+    }
+    }
 
   return (
-    <Dialog >
-      <DialogTrigger asChild>
+    <Dialog open={isOpen} onOpenChange={setIsOpen} >
+        
         {/* <Button btnText="Contact us"/> */}
-        <Button className="relative min-w-[184px] inline-flex items-center justify-center px-6 py-[18px] overflow-hidden font-medium transition duration-300 ease-out rounded-full shadow-xl group cursor-pointer">
-          <span className="absolute inset-0 w-full h-full bg-gradient-to-br  from-blue-900 to-blue-950"></span>
-          <span className="absolute bottom-0 right-0 block w-72 h-72 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-[#ceaf67] rounded-full opacity-30 group-hover:rotate-90 ease"></span>
-          <span className="relative text-white font-bold text-sm uppercase tracking-[1px]">
-            Contact us
-          </span>
-        </Button>
-      </DialogTrigger>
+      {/* <DialogTrigger asChild>
+        {children}
+      
+      </DialogTrigger> */}
       <div className="">
 
-        <DialogContent className="p-2 sm:max-w-[625px]">
-          <form>
+        <DialogContent className="p-2 sm:max-w-[625px] bg-white">
+          <form action={handleSubmit}>
             <ScrollArea className="max-h-[600px] rounded-md border md:p-10 p-4 overflow-auto">
               <DialogHeader>
                 <DialogTitle></DialogTitle>
@@ -85,11 +106,14 @@ const Form = () => {
                 <Separator className="my-2" />
 
                 <div className="grid gap-3">
-                  <Label htmlFor="text-1">Tell us about your idea *</Label>
-                  <Textarea className="min-h-20" id="text-1" name="text" placeholder="App integrating AI ..." value={formValues.text} onChange={handleChange} required/>
+                  <Label htmlFor="message-1">Tell us about your idea *</Label>
+                  <Textarea className="min-h-20" id="message-1" name="message" placeholder="App integrating AI ..." value={formValues.message} onChange={handleChange} required/>
                 </div>
                 <Separator className="my-2" />
-
+                <Textarea id="price-1" name="price" placeholder="App integrating AI ..." value={JSON.stringify(getPriceInfo(value[0]),null,2)} hidden/>
+                
+                <Textarea id="plan-1" name="plan" placeholder="App integrating AI ..." value={getPlan()} hidden/>
+                <Textarea id="chat-1" name="chat" placeholder="App integrating AI ..." value={value[2]} hidden/>
               </div>
               <DialogFooter className="py-10 flex items-center sm:justify-center">
                 <Button type="submit" className="w-full cursor-pointer bg-blue-900" disabled={isFormIncomplete}>Submit</Button>

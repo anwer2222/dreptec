@@ -1,24 +1,25 @@
 // pages/pricing.tsx
-import React, { useState } from 'react'
+
 import { Slider } from "@/components/ui/slider"
 import { useValue } from './ValueContext'
 import {CircleCheck,} from "lucide-react"
-const r= `
-Smart Chatbot Features - Pricing Plans
-Starter Plan
+import { Button } from "./ui/button"
+// const r= `
+// Smart Chatbot Features - Pricing Plans
+// Starter Plan
 
-Level	Basic	Standard	Premium	Enterprise	Ultimate
-Website Chatbot	Basic website support chatbot	Enhanced website support with simple automation	Advanced website chatbot with custom responses	Fully customized website chatbot with analytics	AI-powered website chatbot with multilingual support
-Social Media Integration	Basic replies for Facebook and Twitter	Automated responses for multiple channels	Multi-platform engagement and scheduling	Social media management tools	AI-driven social media responder with analytics
-Personalized Virtual Assistant	Basic virtual assistant with predefined tasks	Customizable virtual assistant	AI-powered virtual assistant with learning capabilities	Virtual assistant with integrations to third-party apps	Fully integrated, context-aware virtual assistant
-Business Plan
+// Level	Basic	Standard	Premium	Enterprise	Ultimate
+// Website Chatbot	Basic website support chatbot	Enhanced website support with simple automation	Advanced website chatbot with custom responses	Fully customized website chatbot with analytics	AI-powered website chatbot with multilingual support
+// Social Media Integration	Basic replies for Facebook and Twitter	Automated responses for multiple channels	Multi-platform engagement and scheduling	Social media management tools	AI-driven social media responder with analytics
+// Personalized Virtual Assistant	Basic virtual assistant with predefined tasks	Customizable virtual assistant	AI-powered virtual assistant with learning capabilities	Virtual assistant with integrations to third-party apps	Fully integrated, context-aware virtual assistant
+// Business Plan
 
-Level	Basic	Standard	Premium	Enterprise	Ultimate
-Website Chatbot	Advanced website chatbot with lead capture	Context-aware chatbot with qualification features	Omnichannel chatbot with proactive support	Fully integrated chat for multiple websites	Enterprise-grade chatbot with AI personalization
-Social Media Integration	Advanced social media responder	Automated multi-channel social engagement	Multi-platform campaign management	AI-powered social media analytics & response	Fully automated social media strategy & outreach
-Personalized Virtual Assistant	Virtual assistant with task automation	AI-powered virtual assistant with CRM integration	Virtual assistant with customized workflows	Virtual assistant with ERP integration	Enterprise AI virtual assistant with predictive insights
-ERP & CRM Integration	Not included	Basic transfer of CRM data	Transfer and synchronize limited ERP & CRM data	Comprehensive ERP & CRM transfer and control	Fully automated, bidirectional ERP & CRM management
-`
+// Level	Basic	Standard	Premium	Enterprise	Ultimate
+// Website Chatbot	Advanced website chatbot with lead capture	Context-aware chatbot with qualification features	Omnichannel chatbot with proactive support	Fully integrated chat for multiple websites	Enterprise-grade chatbot with AI personalization
+// Social Media Integration	Advanced social media responder	Automated multi-channel social engagement	Multi-platform campaign management	AI-powered social media analytics & response	Fully automated social media strategy & outreach
+// Personalized Virtual Assistant	Virtual assistant with task automation	AI-powered virtual assistant with CRM integration	Virtual assistant with customized workflows	Virtual assistant with ERP integration	Enterprise AI virtual assistant with predictive insights
+// ERP & CRM Integration	Not included	Basic transfer of CRM data	Transfer and synchronize limited ERP & CRM data	Comprehensive ERP & CRM transfer and control	Fully automated, bidirectional ERP & CRM management
+// `
 
 const st =[
     ["Website chatbot", "From 3 pages", "No website support"],
@@ -37,7 +38,7 @@ const bu =[
 ]
 
 const PricingPage = () => {
-  const { value, setValue } = useValue();
+  const { value, setValue, setIsFormOpen } = useValue();
   //  Slider value ranges from 0 to 100
   //  const [value, setValue] = useState<[number]>([33]) // Default value
   
@@ -71,10 +72,10 @@ const PricingPage = () => {
         <div className="mb-6">
           <h2 className="text-xl mb-2">Adjust the plan level: {slideTitles[slideIndex]}</h2>
           <Slider
-                defaultValue={[33]}
+                defaultValue={[value[0]]}
                 max={100}
                 step={1}
-                onValueChange={(val) => setValue(val as [number])}
+                onValueChange={(val: [number]) => setValue([val[0],value[1],value[2]])}
                 />
         </div>
         
@@ -89,9 +90,9 @@ const PricingPage = () => {
                 return (<li key={idx} className='flex gap-2 items-center'><CircleCheck className=' size-5'/>{i}</li>)
                })}
             </ul>
-            <button className="bg-blue-600 text-white px-8 py-2 rounded-4xl hover:bg-blue-700">
-              Contact us
-            </button>
+            {/* <Form> <button className='bg-blue-600 text-white px-8 py-2 rounded-4xl hover:bg-blue-700' onClick={()=>setValue([value[0],false,value[2]])}> Contact us</button></Form> */}
+            <Button onClick={()=>{setValue([value[0],false,value[2]]);setIsFormOpen(true)}}  className='bg-blue-600 text-white px-8 py-2 rounded-4xl hover:bg-blue-700'>Contact us</Button>
+            
           </div>
           
           {/* Business Plan */}
@@ -99,13 +100,12 @@ const PricingPage = () => {
             <h3 className="text-2xl font-semibold mb-4">Business</h3>
             <p className="text-3xl font-bold mb-2">${businessPrice}/month</p>
             <ul className="my-8 ml-35 md:ml-5 text-left">
-            {bu[slideIndex].map((i,idx)=>{
+              {bu[slideIndex].map((i,idx)=>{
                 return (<li key={idx} className='flex gap-2 items-center'><CircleCheck className=' size-5'/> {i}</li>)
                })} 
             </ul>
-            <button className="bg-green-600 text-white px-8 py-2 rounded-3xl hover:bg-green-700">
-              Contact us
-            </button>
+            {/*/() => setValue([value[0],0]) */}
+            <Button onClick={()=>{setValue([value[0],true,value[2]]);setIsFormOpen(true)}} className='bg-green-600 text-white px-8 py-2 rounded-4xl hover:bg-green-700'>Contact us</Button>
           </div>
         </div>
       </div>

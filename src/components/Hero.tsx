@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import Button from './Button'
-import Form from './Form'
+import ButtonForm from './Button'
 
 
 export const Hero = () => {
@@ -31,7 +30,7 @@ export const Hero = () => {
               Dreptec helps to unleash the Power of AI: Transforming Ideas into Intelligent Apps
             </p>
             {/* <Button btnText="Contact us"/> */}
-            <Form/>
+            <ButtonForm/>
           </div>
         </div>
 

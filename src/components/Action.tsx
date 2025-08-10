@@ -1,10 +1,11 @@
 "use client"
 import { motion } from 'framer-motion'
-import Button from './Button'
 import { fadeInUpSpring } from '@/motion/motionVariants'
+import ButtonForm from './Button'
 
 
 export const Action = () => {
+  
     return (
       <section
           className="relative py-32 bg-gray-900 text-white"
@@ -30,7 +31,7 @@ export const Action = () => {
                  initial="hidden"
                  whileInView="visible"
                  >
-                    <Button btnText="Contact us"/>
+                    <ButtonForm />
                 </motion.div>
           </div>
         </section>

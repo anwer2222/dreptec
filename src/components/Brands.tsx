@@ -1,32 +1,8 @@
 "use client"
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { fadeInOnScoll } from "@/motion/motionVariants"
+// import { fadeInOnScoll } from "@/motion/motionVariants"
 
-const brandsImages = [
-    {
-        src: "/brands/img1.png",
-    },
-    {
-        src: "/brands/img2.png",
-    },
-    {
-        src: "/brands/img3.png",
-    },
-    {
-        src: "/brands/img4.png",
-    },
-    {
-        src: "/brands/img5.png",
-    },
-    {
-        src: "/brands/img6.png",
-    },
-    {
-        src: "/brands/img7.png",
-    },
-
-];
 
 const numps = Array.from({ length: 24 }, (_, i) => (i + 1).toString());
 

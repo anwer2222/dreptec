@@ -5,12 +5,8 @@ import Image from "next/image";
 // import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import ButtonForm from "./Button";
 
-
-interface NavbarItem {
-  href: string;
-  children: React.ReactNode;
-}
 
 interface Props {
   open: boolean;
@@ -58,13 +54,8 @@ const NavbarSidebar = ({ open,onOpenChange} : Props) => {
                   {item.children}
               </Link>
             ))}
-            <div className="border-t">
-              {/* <Link href="/police" onClick={() => onOpenChange(false)} className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium">
-               Log in
-              </Link>
-              <Link href="/sign-up" onClick={() => onOpenChange(false)} className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium">
-               Start listing
-              </Link> */}
+            <div className="flex justify-center items-center border-t p-10">
+              <ButtonForm/>
             </div>
           </ScrollArea>
         </SheetContent>

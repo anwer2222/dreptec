@@ -1,28 +1,6 @@
 "use client"
 import { Blue, Card } from './Uitls';
 
-
-
-
-const l1 = [
-  {
-    img: "/demo/icons/dreptic-f.png",
-    til: "Dreptec",
-    par: "The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."
-  },
-  {
-    img: "/demo/icons/flash.png",
-    til: "Dreptec",
-    par: "The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."
-  },
-  {
-    img: "/demo/icons/dreptic-f.png",
-    til: "Dreptec",
-    par: "The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."
-  },
-
-]
-
 export const Feature = () => {
     return (
       <section id="section-features" className="relative py-20 bg-[#101435] text-white">

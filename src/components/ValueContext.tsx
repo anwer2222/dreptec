@@ -3,14 +3,17 @@
 import React, { createContext, useContext, useState } from 'react';
 
 export const ValueContext = createContext<{
-  value: [number];
-  setValue: React.Dispatch<React.SetStateAction<[number]>>;
+  value: [number,boolean,string];
+  setValue: React.Dispatch<React.SetStateAction<[number,boolean,string]>>;
+  isFormOpen: boolean;
+  setIsFormOpen:React.Dispatch<React.SetStateAction<boolean>>
 } | undefined>(undefined);
 
-export const ValueProvider: React.FC = ({ children }) => {
-  const [value, setValue] = useState<[number]>([33]);
+export const ValueProvider = ({ children }: {children: React.ReactNode}) => {
+  const [value, setValue] = useState<[number,boolean,string]>([33,false,""]);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   return (
-    <ValueContext.Provider value={{ value, setValue }}>
+    <ValueContext.Provider value={{ value, setValue,isFormOpen, setIsFormOpen }}>
       {children}
     </ValueContext.Provider>
   );

@@ -6,7 +6,7 @@ import { useValue } from './ValueContext';
 import { usePathname } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MemoizedMarkdown } from '@/components/memoized-markdown';
@@ -18,12 +18,12 @@ const Chat = () =>{
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [showChatIcon, setShowChatIcon] = useState(false);
     const chatIconRef = useRef<HTMLButtonElement>(null);
-    const { value } = useValue();
+    const { value, setValue } = useValue();
     
     const {messages, sendMessage, status, stop,error,} = useChat({
         transport: new DefaultChatTransport({
             api: '/api/chat',
-            body:{url:pathname,price:useValue()},
+            body:{url:pathname,price:value[0]},
           }),})
     
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -82,8 +82,8 @@ const Chat = () =>{
           animate={{opacity: 1, scale: 1 }}
           exit={{opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.2 }}
-          className="fixed bottom-20 right-4 z-50 w-[95%] md:w-[500px]">
-              <Card className="border-2">
+          className="fixed bottom-20 right-4 z-50 w-[95%] md:w-[500px] ">
+              <Card className="border-2 bg-white">
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                    <CardTitle className="text-lg font-bold">
                       Chat with Dreptec AI
@@ -107,8 +107,8 @@ const Chat = () =>{
                     {messages?.map((message, index)=> ( 
                       <div key={index} className={`mb-4 ${message.role ==="user"? "text-right":"text-left"}`}>
                         <div className={`inline-block p-4 rounded-lg ${message.role ==="user"? "bg-primary text-primary-foreground":"bg-muted"}`}>
-                            {message.parts.map((part, index) =>
-                                part.type === 'text' ? <MemoizedMarkdown id={message.id} content={part.text}/> : null,
+                            {message.parts.map((part,index) =>
+                                part.type === 'text' ? <MemoizedMarkdown id={message.id} content={part.text} key={index}/> : null,
                               )}   
                         </div>
                       </div>
@@ -144,8 +144,9 @@ const Chat = () =>{
                   <form onSubmit={e => {
                                     e.preventDefault();
                                     if (input.trim()) {
-                                        sendMessage({ text: input, }, {body: { url: pathname, price: value }});
+                                        sendMessage({ text: input, }, {body: { url: pathname, price: value[0] }});
                                         setInput('');
+                                        setValue([value[0],value[1],JSON.stringify(messages,null,2)])
                                     }}} className="flex w-full items-center space-x-2">
                     <Input
                        value={input}

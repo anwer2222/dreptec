@@ -1,17 +1,19 @@
 "use client"
 import Image from 'next/image'
 import Link from "next/link"
-import Button from './Button'
-import {Button as Bun} from './ui/button'
+
+import Form from './Form'
+import {Button} from './ui/button'
 import { useState } from 'react';
 import NavbarSidebar from './Navbar';
 import { MenuIcon } from 'lucide-react';
-import Form from './Form'
+import { useValue } from './ValueContext'
+import ButtonForm from './Button'
 
 
 export const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  let [open, setOpen] = useState(false);
+  const { isFormOpen, setIsFormOpen } = useValue();
     return (
         <header className="bg-[#101435] py-4">
         <div className="container mx-auto px-4">
@@ -34,24 +36,25 @@ export const Header = () => {
             </nav>
             
             <div className='hidden lg:block'>
-            {/* <Button btnText="Contact us"/> */}
-            <Form/>
+            {/* <Form/> */}
+              <ButtonForm/>
+            
             {/* Buy Now Button */}
             <NavbarSidebar open={isSidebarOpen} onOpenChange={setIsSidebarOpen}/>
             </div>
             <div className="flex lg:hidden items-center justify-center">
-            <Bun
+            <Button
               variant="ghost"
               className="size-12 border-transparent text-white"
               onClick={() => setIsSidebarOpen(true)}
               >
                 <MenuIcon/>
-            </Bun>
+            </Button>
 
            </div>
           </div>
         </div>
-        
+        <Form isOpen={isFormOpen} setIsOpen={setIsFormOpen}/>
       </header>
     )
 }

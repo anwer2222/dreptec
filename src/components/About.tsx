@@ -1,46 +1,8 @@
 "use client"
 import { motion } from 'framer-motion';
-
 import { Card } from './Uitls';
-import Button from './Button';
 import { fadeInUpSpring } from '@/motion/motionVariants';
-
-interface Props {
-  img: string;
-  til: string;
-  par: string;
-  idx: number
-};
-
-interface Propb {
-  til: string;
-  suf: string;
-  px: string;
-  nums: number;
-  nume: number;
-  dur: number;
-  idx: number
-};
-
-
-const l1 = [
-  {
-    img: "/demo/icons/dreptic-f.png",
-    til: "Dreptec",
-    par: "The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."
-  },
-  {
-    img: "/demo/icons/flash.png",
-    til: "Dreptec",
-    par: "The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."
-  },
-  {
-    img: "/demo/icons/dreptic-f.png",
-    til: "Dreptec",
-    par: "The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."
-  },
-
-]
+import Button from './Button';
 
 export const Hero = () => {
 
@@ -161,7 +123,7 @@ export const Discover = () => {
           Discover with us
         </div>
         <h1 className="text-1xl font-extrabold mb-6">
-          Discover the future of intelligent applications. Let's innovate together and unlock the true potential of generative AI.
+          Discover the future of intelligent applications. Let&apos;s innovate together and unlock the true potential of generative AI.
         </h1>
 
         {/* btn */}
@@ -170,7 +132,7 @@ export const Discover = () => {
           initial="hidden"
           whileInView="visible"
         >
-          <Button btnText="Contact us" />
+          <Button />
         </motion.div>
       </div>
     </section>
