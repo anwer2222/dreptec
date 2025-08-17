@@ -18,15 +18,15 @@ export const Hero = () => {
       
       <div className="absolute inset-0 bg-black opacity-80"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-15">
           <div className="text-center max-w-3xl">
-            <div className="subtitle s2 mb-3 text-indigo-400 uppercase tracking-widest font-semibold">
+            <div className="subtitle s2 mb-3 text-[#0A43D5] uppercase tracking-widest font-semibold">
               Welcome to Dreptec
             </div>
             <h1 className="text-6xl font-extrabold uppercase leading-tight mb-6">
               AI pioneer
             </h1>
-            <p className="mb-8 text-lg">
+            <p className="mb-8 text-lg max-w-[400px]">
               Dreptec helps to unleash the Power of AI: Transforming Ideas into Intelligent Apps
             </p>
             {/* <Button btnText="Contact us"/> */}

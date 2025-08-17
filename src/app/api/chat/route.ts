@@ -42,7 +42,7 @@ export async function POST(req: Request) {
   // console.log("messages, url, price:",messages, url, price );  
 
   const result = streamText({
-    model: openai('gpt-4.1-nano'),//"gpt-4.1-nano"
+    model: openai('gpt-5.1-nano'),//"gpt-4.1-nano"
     system: st, 
     temperature:0.5,
     messages: convertToModelMessages(messages),

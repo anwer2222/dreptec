@@ -7,7 +7,7 @@ export const Feature = () => {
       <div className="gradient-edge-top opacity-20 absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-gray-900 to-transparent"></div>
       <div className="container mx-auto px-4 relative z-10" >
         <div className="text-center max-w-xl mx-auto mb-12">
-          <div className="subtitle s2 mb-3 uppercase tracking-widest text-indigo-400 font-semibold">
+          <div className="subtitle s2 mb-3 uppercase tracking-widest text-[#0A43D5] font-semibold">
             Why Choose Dreptec
           </div>
           <h2 className="text-4xl font-bold">Dreptec Features</h2>

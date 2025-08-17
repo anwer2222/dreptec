@@ -56,10 +56,10 @@ const Footer = () => {
                     <div className="flex-1 flex justify-center">
                        <Link href="/" className="">
                         <div className="flex justify-center items-center gap-4 lg:flex-row flex-col">
-                           <div className="relative w-[180px] h-[180px] flex">
+                           <div className="relative w-[130px] h-[130px] flex">
                               <Image src="/logo_d.png" fill alt="" className="object-contain"/>
                            </div>
-                             <div className="relative w-[180px] h-[60px] lg:w-[300px] lg:h-[300px] flex">
+                             <div className="relative w-[130px] h-[60px] lg:w-[240px] lg:h-[240px] flex">
                               <Image src="/logo_is.png" fill alt="" className="object-contain"/>
                               </div>
                         </div>

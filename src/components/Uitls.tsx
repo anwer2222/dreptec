@@ -30,10 +30,10 @@ export const Card = ({ img, til, par, idx }: Props) => {
       initial="initial"
       whileInView="animate"
       custom={idx}
-      className="bg-gray-700 p-10 rounded-lg flex flex-col items-center text-center space-y-4" key={idx}>
+      className="bg-[#d7d8e3] p-10 rounded-lg flex flex-col items-center text-center space-y-4" key={idx}>
       <Image src={img} alt="dreptic" width={100} height={100} />
-      <h4 className="text-xl font-semibold">{til}</h4>
-      <p>{par}</p>
+      <h4 className="text-xl font-semibold text-[#0A43D5]!">{til}</h4>
+      <p className='text-[#0A43D5]!'>{par}</p>
     </motion.div>
   )
 }
