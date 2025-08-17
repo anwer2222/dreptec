@@ -15,13 +15,13 @@ export const Feature = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Feature 1 */}
-          <Card idx={1} img="/demo/icons/dreptic-f.png" til="Dreptec" par="The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."/>
+          <Card idx={1} img="/demo/icons_blue/dreptic-f.png" til="Dreptec" par="The future is built on the limitless potential of AI. Our platform empowers developers, businesses, and creators to harness advanced generative AI to craft smarter, more personalized digital experiences."/>
           
           {/* Feature 2 */}
-          <Card idx={2} img="/demo/icons/flash.png" til="Lightning-Fast" par="Fast Experience near-instantaneous interactions. Dreptec's optimized infrastructure ensures your AI-powered apps respond swiftly, maintaining high user satisfaction and seamless experience."/>
+          <Card idx={2} img="/demo/icons_blue/flash.png" til="Lightning-Fast" par="Fast Experience near-instantaneous interactions. Dreptec's optimized infrastructure ensures your AI-powered apps respond swiftly, maintaining high user satisfaction and seamless experience."/>
           
           {/* Feature 3 */}
-          <Card idx={3} img="/demo/icons/website-chat.png" til="Chatbot Integration" par="Embed smart chatbots directly into your website or social media channels. Whether serving as a customer support agent, a social media responder, or a personalized virtual assistant tailored to your unique personality."/>
+          <Card idx={3} img="/demo/icons_blue/website-chat.png" til="Chatbot Integration" par="Embed smart chatbots directly into your website or social media channels. Whether serving as a customer support agent, a social media responder, or a personalized virtual assistant tailored to your unique personality."/>
           
           {/* Stats */}
           <Blue til="Clients Trust Dreptec" nums={0} nume={200} dur={3} px="" suf="+" idx={1}/>
@@ -29,9 +29,9 @@ export const Feature = () => {
           <Blue til="Free trial" nums={200} nume={0} dur={3} px="$" suf="" idx={3}/>
 
           {/* More features */}
-          <Card idx={1} img="/demo/icons/openai.png" til="OpenAI" par="Powered by the Most Advanced AI Integrate with cutting-edge OpenAI models, providing your applications with sophisticated language understanding, creativity, and contextual awareness."/>
-          <Card idx={2} img="/demo/icons/youtube-chat.png" til="YouTube to Chat" par="Engage with Content like Never Before Turn YouTube videos into interactive conversations. Our “YouTube to Chat” feature enables your audience to ask questions and discuss content from channels, making learning and engagement richer and more dynamic."/>
-          <Card idx={3} img="/demo/icons/mcp.png" til="MCP technology" par="Seamless connection between LLMs and external data sources or tools. Whether you're building an enhancing chat interfaces, or designing custom AI workflows, MCP offers a standardized way to connect relevant context and data to perform best."/>
+          <Card idx={1} img="/demo/icons_blue/openai.png" til="OpenAI" par="Powered by the Most Advanced AI Integrate with cutting-edge OpenAI models, providing your applications with sophisticated language understanding, creativity, and contextual awareness."/>
+          <Card idx={2} img="/demo/icons_blue/youtube-chat.png" til="YouTube to Chat" par="Engage with Content like Never Before Turn YouTube videos into interactive conversations. Our “YouTube to Chat” feature enables your audience to ask questions and discuss content from channels, making learning and engagement richer and more dynamic."/>
+          <Card idx={3} img="/demo/icons_blue/mcp.png" til="MCP technology" par="Seamless connection between LLMs and external data sources or tools. Whether you're building an enhancing chat interfaces, or designing custom AI workflows, MCP offers a standardized way to connect relevant context and data to perform best."/>
         
         </div>
       </div>

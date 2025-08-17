@@ -36,11 +36,11 @@ export const Hero = () => {
 
         {/* Side badges */}
         <div className="hidden sm:flex absolute top-5 left-10 flex-col items-center space-y-2 z-20">
-          <Image src="/demo/ai_.png" alt="Envato Elite Author" width={60} height={60} />
+          <Image src="/demo/icons_blue/ai_.png" alt="Envato Elite Author" width={60} height={60} />
           <h5 className="text-white font-semibold">AI Elite</h5>
         </div>
         <div className="hidden sm:flex absolute top-5 right-10 flex-col items-center space-y-2 z-20">
-          <Image src="/demo/featured-author.png" alt="Featured Author" width={60} height={60} />
+          <Image src="/demo/icons_blue/featured-author.png" alt="Featured Author" width={60} height={60} />
           <h5 className="text-white font-semibold">Featured AI</h5>
         </div>
 

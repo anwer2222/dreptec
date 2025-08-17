@@ -85,10 +85,12 @@ const PricingPage = () => {
           <div className="border p-4 flex-1 hover:shadow-lg transition-shadow duration-300 rounded-3xl min-w-[310px]">
             <h3 className="text-2xl font-semibold mb-4">Starter</h3>
             <p className="text-3xl font-bold mb-2 flex items-center justify-center">${starterPrice}/month</p>
-            <ul className="my-8 ml-35 md:ml-5 text-left">
+            <ul className="my-8 flex justify-center flex-col items-center ">
+              <div className="text-left">
                {st[slideIndex].map((i,idx)=>{
                 return (<li key={idx} className='flex gap-2 items-center'><CircleCheck className=' size-5'/>{i}</li>)
                })}
+               </div>
             </ul>
             {/* <Form> <button className='bg-blue-600 text-white px-8 py-2 rounded-4xl hover:bg-blue-700' onClick={()=>setValue([value[0],false,value[2]])}> Contact us</button></Form> */}
             <Button onClick={()=>{setValue([value[0],false,value[2]]);setIsFormOpen(true)}}  className='bg-blue-600 text-white px-8 py-2 rounded-4xl hover:bg-blue-700'>Contact us</Button>
@@ -99,10 +101,12 @@ const PricingPage = () => {
           <div className="border p-4 flex-1 hover:shadow-lg transition-shadow duration-300 rounded-3xl  min-w-[310px]">
             <h3 className="text-2xl font-semibold mb-4">Business</h3>
             <p className="text-3xl font-bold mb-2">${businessPrice}/month</p>
-            <ul className="my-8 ml-35 md:ml-5 text-left">
+            <ul className="my-8 flex justify-center flex-col items-center ">
+              <div className="text-left">
               {bu[slideIndex].map((i,idx)=>{
                 return (<li key={idx} className='flex gap-2 items-center'><CircleCheck className=' size-5'/> {i}</li>)
-               })} 
+               })}
+               </div>
             </ul>
             {/*/() => setValue([value[0],0]) */}
             <Button onClick={()=>{setValue([value[0],true,value[2]]);setIsFormOpen(true)}} className='bg-green-600 text-white px-8 py-2 rounded-4xl hover:bg-green-700'>Contact us</Button>

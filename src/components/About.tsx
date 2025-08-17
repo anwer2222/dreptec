@@ -37,17 +37,17 @@ export const Features = () => {
       <div className="container mx-auto px-4 relative z-10" >
         {/* Feature 1 */}
         <div className="text-center max-w-xl mx-auto mb-12">
-          <div className="subtitle s2 mb-3 uppercase tracking-widest text-indigo-400 font-semibold">
+          <div className="subtitle s2 mb-3 uppercase tracking-widest text-[#0A43D5] font-semibold">
             Learn more
           </div>
           <h2 className="text-4xl font-bold">What We Do</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <Card idx={1} img="/demo/icons/dreptic-f.png" til="AI-Driven Apps" par="We help you embed intelligent chatbots, conversational agents, and interactive content tools into your websites and social platforms." />
-          <Card idx={2} img="/demo/icons/relible.png" til="Open Protocols" par="Utilizing MCP, we offer standardized ways to connect large language models with external data sources and tools, making AI more adaptable and context-aware." />
-          <Card idx={3} img="/demo/icons/content.png" til="Content & Data" par="We facilitate rapid, efficient access to relevant external information, ensuring your AI models operate with up-to-date and comprehensive data." />
-          <Card idx={4} img="/demo/icons/website-chat.png" til="Innovation and Automation" par="Our solutions aim to simplify operational tasks, automate routine processes, and provide instant, meaningful responses across various applications." />
+          <Card idx={1} img="/demo/icons_blue/dreptic-f.png" til="AI-Driven Apps" par="We help you embed intelligent chatbots, conversational agents, and interactive content tools into your websites and social platforms." />
+          <Card idx={2} img="/demo/icons_blue/relible.png" til="Open Protocols" par="Utilizing MCP, we offer standardized ways to connect large language models with external data sources and tools, making AI more adaptable and context-aware." />
+          <Card idx={3} img="/demo/icons_blue/content.png" til="Content & Data" par="We facilitate rapid, efficient access to relevant external information, ensuring your AI models operate with up-to-date and comprehensive data." />
+          <Card idx={4} img="/demo/icons_blue/website-chat.png" til="Innovation and Automation" par="Our solutions aim to simplify operational tasks, automate routine processes, and provide instant, meaningful responses across various applications." />
 
         </div>
       </div>
@@ -69,7 +69,7 @@ export const Mission = () => {
     >
       <div className="absolute inset-0 bg-black opacity-80"></div>
       <div className="container mx-auto px-4 relative z-10 text-center max-w-2xl">
-        <div className="subtitle mb-3 uppercase tracking-widest text-indigo-400 font-semibold">
+        <div className="subtitle mb-3 uppercase tracking-widest text-[#0A43D5] font-semibold">
           Our Mission
         </div>
         <h1 className="text-1xl font-extrabold mb-6">
@@ -94,10 +94,10 @@ export const Values = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Feature 1 */}
-          <Card idx={1} img="/demo/icons/ai-cpu.png" til="Innovation" par="Continually pushing the boundaries of AI technology to deliver next-generation solutions." />
-          <Card idx={2} img="/demo/icons/flash.png" til="Accessibility" par="Making advanced AI tools available and easy to implement for everyone." />
-          <Card idx={3} img="/demo/icons/cob.png" til="Collaboration" par="Partnering with clients and communities to foster shared growth and success." />
-          <Card idx={4} img="/demo/icons/relible.png" til="Reliability" par="Building dependable solutions that customers can trust." />
+          <Card idx={1} img="/demo/icons_blue/ai-cpu.png" til="Innovation" par="Continually pushing the boundaries of AI technology to deliver next-generation solutions." />
+          <Card idx={2} img="/demo/icons_blue/flash.png" til="Accessibility" par="Making advanced AI tools available and easy to implement for everyone." />
+          <Card idx={3} img="/demo/icons_blue/cob.png" til="Collaboration" par="Partnering with clients and communities to foster shared growth and success." />
+          <Card idx={4} img="/demo/icons_blue/relible.png" til="Reliability" par="Building dependable solutions that customers can trust." />
         </div>
       </div>
     </section>
@@ -119,7 +119,7 @@ export const Discover = () => {
     >
       <div className="absolute inset-0 bg-black opacity-80"></div>
       <div className="container mx-auto px-4 relative z-10 text-center max-w-2xl">
-        <div className="subtitle mb-3 uppercase tracking-widest text-indigo-400 font-semibold">
+        <div className="subtitle mb-3 uppercase tracking-widest text-[#0A43D5] font-semibold">
           Discover with us
         </div>
         <h1 className="text-1xl font-extrabold mb-6">

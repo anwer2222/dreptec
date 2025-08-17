@@ -20,18 +20,18 @@ const icons = [
         src: "/footer/4.svg",
         href: "",
     },
-    {
-        src: "/footer/5.svg",
-        href: "",
-    },
-    {
-        src: "/footer/6.svg",
-        href: "",
-    },
-    {
-        src: "/footer/7.svg",
-        href: "",
-    },
+    // {
+    //     src: "/footer/5.svg",
+    //     href: "",
+    // },
+    // {
+    //     src: "/footer/6.svg",
+    //     href: "",
+    // },
+    // {
+    //     src: "/footer/7.svg",
+    //     href: "",
+    // },
 ]
 
 const Footer = () => {

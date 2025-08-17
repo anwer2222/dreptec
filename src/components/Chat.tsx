@@ -64,12 +64,12 @@ const Chat = () =>{
             exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.2 }} // toggleChat
             className="fixed bottom-4 right-4 z-50" >
-     <Button ref={chatIconRef} onClick={toggleChat} size="icon" className="rounded-full size-14 p-0 shadow-lg bg-transparent hover:bg-purple-700">
+     <Button ref={chatIconRef} onClick={toggleChat} size="icon" className="rounded-full size-14 p-0 shadow-lg bg-transparent hover:bg-[#0A43D5]">
          {!isChatOpen ? (
           
            <Image src="/logo_d.png" alt="" width={30} height={30}/>
           ):(
-            <ArrowDownCircleIcon className="text-black"/>)}
+            <ArrowDownCircleIcon className="text-white size-8"/>)}
       </Button>
 
         </motion.div>
