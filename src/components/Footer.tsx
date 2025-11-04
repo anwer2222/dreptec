@@ -20,14 +20,14 @@ const icons = [
         src: "/footer/4.svg",
         href: "",
     },
-    {
-        src: "/footer/5.svg",
-        href: "",
-    },
-    {
-        src: "/footer/6.svg",
-        href: "",
-    },
+    // {
+    //     src: "/footer/5.svg",
+    //     href: "",
+    // },
+    // {
+    //     src: "/footer/6.svg",
+    //     href: "",
+    // },
     {
         src: "/footer/7.svg",
         href: "",
@@ -66,8 +66,18 @@ const Footer = () => {
                        </Link>
                     </div>
                     <Chat/> 
-                    {/* copyright */}
-                    <p className="flex-1 flex text-white justify-end font-light lg:mb-0"> &copy; 2025 Derptec. All rights reserved.</p>
+                    <div className="flex-1 flex justify-center items-center text-white gap-2">
+                        <p>see our</p>
+                        <Link href="/terms">Terms</Link>
+                        <p>and</p>
+                        <Link href="/privacy">Privacy</Link>
+                        </div>
+                   
+                    
+                </div>
+                 {/* copyright */}
+                 <div className="flex justify-center items-center">
+                <p className="text-white justify-end font-light lg:mb-0"> &copy; 2025 Derptec. All rights reserved.</p>
                 </div>
             </div>
         </footer>

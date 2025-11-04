@@ -30,7 +30,7 @@ const NavbarSidebar = ({ open,onOpenChange} : Props) => {
         },
         {
             href: "/about",
-            children: "Abour"
+            children: "About"
         }
     ]
 
