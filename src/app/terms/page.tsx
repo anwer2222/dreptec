@@ -183,7 +183,7 @@ export default function page() {
                     <p>
                         <span className="font-ligatures-none whitespace-pre-wrap">
                             Your privacy is important to us. Please review our
-                            <button type="button" className="font-bold text-accent-550 dark:text-accent-600 underline text-start align-top" data-url="https://#" initial="start" animate="end" variants="[object Object]" custom="0">
+                            <button type="button" className="font-bold text-accent-550 dark:text-accent-600 underline text-start align-top" data-url="https://#">
                                 Privacy Policy
                             </button>
                             to understand how we collect, use, and protect your data.
@@ -196,7 +196,7 @@ export default function page() {
                     </h2>
                     <p>
                         <span className="font-ligatures-none whitespace-pre-wrap">
-                            Dreptec is provided "as is" without warranties of any kind. We do not guarantee:
+                            Dreptec is provided &quot;as is&quot; without warranties of any kind. We do not guarantee:
                         </span>
                     </p>
                     <ul className="relative list-outside marker:text-foreground-750 dark:marker:text-foreground-600 flex flex-col ms-4 px-1">

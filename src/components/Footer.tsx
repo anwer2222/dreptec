@@ -72,8 +72,6 @@ const Footer = () => {
                         <p>and</p>
                         <Link href="/privacy">Privacy</Link>
                         </div>
-                   
-                    
                 </div>
                  {/* copyright */}
                  <div className="flex justify-center items-center">
