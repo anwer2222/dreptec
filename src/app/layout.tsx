@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   verification: {
     other: {
       "facebook-domain-verification": "4z2ozdwbnyfnc483e4n429ghthm3xe",
+      "google-site-verification": "7BetWjMCY7B3S1lDO01DSS6jXwIzlwRupSLKVqs6Qzs"
     },
   },
 };
