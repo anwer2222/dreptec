@@ -1,6 +1,5 @@
 "use client"
 import { motion } from 'framer-motion';
-import { Card } from './Uitls';
 import { fadeInUpSpring } from '@/motion/motionVariants';
 import Button from './Button';
 
