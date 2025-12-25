@@ -41,16 +41,30 @@ export const Card = ({ img, til, par, idx }: Props) => {
 export const Blue = ({ til, suf, nums, nume, dur, px, idx }: Propb) => {
   return (
     <motion.div
-      variants={iconAnimation}
+      variants={iconAnimation} // Assuming iconAnimation is defined elsewhere
       initial="initial"
       whileInView="animate"
       custom={idx}
-      className="bg-indigo-700 p-10 rounded-lg text-center text-white" key={idx}>
+      className="bg-indigo-700 p-10 rounded-lg text-center text-white" 
+      key={idx}
+    >
       <h2 className="text-4xl font-bold mb-1">
-        <CountUp start={nums} end={nume} delay={0.5} duration={dur} prefix={px} suffix={suf} enableScrollSpy={true} />
+        {/* FIX: Use the Render Prop pattern here */}
+        <CountUp 
+          start={nums} 
+          end={nume} 
+          delay={0.5} 
+          duration={dur} 
+          prefix={px} 
+          suffix={suf} 
+          enableScrollSpy={true}
+        >
+          {({ countUpRef }) => (
+            <span ref={countUpRef} />
+          )}
+        </CountUp>
       </h2>
       <p>{til}</p>
     </motion.div>
   )
 }
-

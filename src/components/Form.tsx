@@ -105,15 +105,46 @@ const Form = ( {
                 </div>
                 <Separator className="my-2" />
 
+                {/* inside your Form component return statement */}
+
                 <div className="grid gap-3">
                   <Label htmlFor="message-1">Tell us about your idea *</Label>
-                  <Textarea className="min-h-20" id="message-1" name="message" placeholder="App integrating AI ..." value={formValues.message} onChange={handleChange} required/>
+                  <Textarea 
+                    className="min-h-20" 
+                    id="message-1" 
+                    name="message" 
+                    placeholder="App integrating AI ..." 
+                    value={formValues.message} 
+                    onChange={handleChange} 
+                    required
+                  />
                 </div>
                 <Separator className="my-2" />
-                <Textarea id="price-1" name="price" placeholder="App integrating AI ..." value={JSON.stringify(getPriceInfo(value[0]),null,2)} hidden/>
-                
-                <Textarea id="plan-1" name="plan" placeholder="App integrating AI ..." value={getPlan()} hidden/>
-                <Textarea id="chat-1" name="chat" placeholder="App integrating AI ..." value={value[2]} hidden/>
+
+                {/* FIX: Add the readOnly prop to these inputs */}
+                <Textarea 
+                  id="price-1" 
+                  name="price" 
+                  value={JSON.stringify(getPriceInfo(value[0]), null, 2)} 
+                  hidden 
+                  readOnly 
+                />
+
+                <Textarea 
+                  id="plan-1" 
+                  name="plan" 
+                  value={getPlan()} 
+                  hidden 
+                  readOnly 
+                />
+
+                <Textarea 
+                  id="chat-1" 
+                  name="chat" 
+                  value={value[2]} 
+                  hidden 
+                  readOnly 
+                />
               </div>
               <DialogFooter className="py-10 flex items-center sm:justify-center">
                 <Button type="submit" className="w-full cursor-pointer bg-blue-900" disabled={isFormIncomplete}>Submit</Button>
